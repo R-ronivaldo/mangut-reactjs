@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import User from '../components/User';
 
-const routesLogin = () => (
+const routesApp = () => (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={User} />
@@ -12,4 +12,4 @@ const routesLogin = () => (
         </BrowserRouter>
 );
 
-export default routesLogin;
+export default routesApp;

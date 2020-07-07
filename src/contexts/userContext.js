@@ -7,7 +7,7 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState({});
     const [token, setToken] = useState({});
     const [signed, setSigned] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         function loadStoragedData(){
@@ -19,7 +19,7 @@ const UserProvider = ({ children }) => {
                 setUser(JSON.parse(storageUser));
                 setToken(storageToken);
                 setSigned(storageSigned);
-                setLoading(false); 
+                setLoading(false);
             }
         }
         loadStoragedData();
