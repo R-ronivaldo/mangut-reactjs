@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { UserContext } from '../contexts/userContext';
 
-import UserProvider from '../contexts/userContext';
-import Login from '../components/Login';
+import RoutesLogin from './RoutesLogin';
+import RoutesApp from './RoutesApp';
 
-const Routes = () => (
-    <UserProvider>
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Login} />
-            </Switch>
-        </BrowserRouter>
-    </UserProvider>
-);
+const Routes = () => {
+    const { user, signed, token } = useContext(UserContext);
+    console.log(signed);
+    console.log(token);
+    console.log(user);
+    return signed ? <RoutesApp /> : <RoutesLogin />
+};
 
 export default Routes;

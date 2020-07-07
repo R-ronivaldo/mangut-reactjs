@@ -5,19 +5,27 @@ export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [user, setUser] = useState({});
+    const [token, setToken] = useState({});
+    const [signed, setSigned] = useState(false);
     
-    const getUser = async dataForm => {
+    async function getUser (dataForm) {
         const response = await api.post('/authenticate', {
             email: dataForm.email,
             password: dataForm.password
             });
 
         setUser(response.data.user);
-    }
 
-    console.log(user);
+        setToken(response.data.token);
+
+        if(response.status === 200){
+            setSigned(true);
+        }
+    
+    }
+    
     return(
-        <UserContext.Provider value={{ user, getUser }}>
+        <UserContext.Provider value={{ signed, user, token, getUser }}>
             { children }
         </UserContext.Provider>
     );

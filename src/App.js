@@ -2,6 +2,13 @@ import React from 'react';
 
 import Routes from './routes';
 
-const App = () => <Routes />
+import UserProvider from './contexts/userContext';
+
+const App = () => (
+    <UserProvider>
+        <Routes />
+    </UserProvider>
+
+);
 
 export default App;

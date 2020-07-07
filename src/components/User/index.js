@@ -1,15 +1,12 @@
 import React, { useContext } from 'react';
-import userContext from '../../contexts/userContext';
+import { UserContext } from '../../contexts/userContext';
 
 const User = () => {
-    const context = useContext(userContext);
-
-    const users = context.user.map(user => (
-        <div key={user.id}>{user.name} - {user.secodName} - {user.email} - {user.cpf}</div>
-    ));
+    const { user, token } = useContext(UserContext);
     return (
         <div>
-            {users}
+            <div key={user.id}>Nome: {user.name} - Sobrenome: {user.secondName} - Email: {user.email} - Cpf: {user.cpf}</div>
+            <div key={user.id}>Token: {token}</div>
         </div>
     );
 }
