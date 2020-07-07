@@ -1,14 +1,7 @@
 import React from 'react';
 
-import UserProvider from './contexts/userContext';
-import Login from './components/Login';
+import Routes from './routes';
 
-const App = () => {
-    return(
-        <UserProvider>
-            <Login></Login>
-        </UserProvider>
-    );
-}
+const App = () => <Routes />
 
 export default App;

@@ -1,0 +1,11 @@
+div.formLogin {
+    width: 300px;
+}
+
+.formLogin input {
+    padding: 2px;
+    margin: 4px;
+}
+.formLogin button {
+    color: blue;
+}
