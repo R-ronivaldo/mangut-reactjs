@@ -5,19 +5,12 @@ import { UserContext } from '../contexts/userContext';
 import RoutesLogin from './routesLogin';
 import RoutesApp from './RoutesApp';
 
-import ReactLoading from 'react-loading';
-
 const Routes = () => {
-    const { user, signed, token, loading } = useContext(UserContext);
+    const { user, catalogs, signed, token } = useContext(UserContext);
     console.log(signed);
     console.log(token);
     console.log(user);
-
-    if(loading) {
-        return (
-            <ReactLoading type={'spin'} color={'#333'} height={80} width={50} />
-        );
-    }
+    console.log(catalogs);
 
     return signed ? <RoutesApp /> : <RoutesLogin />
 };
