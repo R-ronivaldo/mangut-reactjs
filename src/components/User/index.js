@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../../contexts/userContext';
+import { ProfileContext } from '../../contexts/profileContext';
 
 const User = () => {
-    const { user, token, singOut } = useContext(UserContext);
+    const { user, token, singOut } = useContext(ProfileContext);
 
     function handleSignOut() {
         singOut();
