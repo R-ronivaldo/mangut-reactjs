@@ -3,13 +3,15 @@ import React from 'react';
 import Routes from './routes';
 import Header from './components/Header';
 
-import UserProvider from './contexts/userContext';
+import ProfileProvider from './contexts/profileContext';
 
 const App = () => (
-    <UserProvider>
+    <div className="App">
         <Header />
-        <Routes />
-    </UserProvider>
+        <ProfileProvider>
+            <Routes />
+        </ProfileProvider>
+    </div>
 );
 
 export default App;

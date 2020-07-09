@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { UserContext } from '../../contexts/userContext';
+import { ProfileContext } from '../../contexts/profileContext';
 import './style.css';
 
 const Login = () => {
-    const { getUser } = useContext(UserContext);
+    const { getUser } = useContext(ProfileContext);
     const [dataForm, setDataForm] = useState();
 
     const handleFormSubmit = async e => {

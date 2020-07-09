@@ -1,23 +1,19 @@
 import React, { useContext } from 'react';
 
-import { UserContext } from '../contexts/userContext';
+import { ProfileContext } from '../contexts/profileContext';
 
 import RoutesLogin from './routesLogin';
 import RoutesApp from './RoutesApp';
 
-import ReactLoading from 'react-loading';
-
 const Routes = () => {
-    const { user, signed, token, loading } = useContext(UserContext);
+    const { user, catalogs, products , evaluations, notifies, signed, token } = useContext(ProfileContext);
     console.log(signed);
     console.log(token);
     console.log(user);
-
-    if(loading) {
-        return (
-            <ReactLoading type={'spin'} color={'#333'} height={80} width={50} />
-        );
-    }
+    console.log(catalogs);
+    console.log(products);
+    console.log(evaluations);
+    console.log(notifies);
 
     return signed ? <RoutesApp /> : <RoutesLogin />
 };

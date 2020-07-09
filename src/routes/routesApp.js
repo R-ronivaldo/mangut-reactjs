@@ -2,12 +2,12 @@ import React from 'react';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import User from '../components/User';
+import Profile from '../pages/profile';
 
 const routesApp = () => (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={User} />
+                <Route exact path="/" component={Profile} />
             </Switch>
         </BrowserRouter>
 );
